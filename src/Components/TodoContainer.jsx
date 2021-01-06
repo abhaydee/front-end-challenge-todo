@@ -1,14 +1,23 @@
-import React from "react";
+import React,{useState} from "react";
 import IconMoon from "../images/icon-moon.svg"
-import "../styles/TodoContainer.css";
+import IconSun from "../images/icon-sun.svg"
+import styles from "../styles/TodoContainer.scss";
+import InputContainer from "./InputContainer";
 function TodoContainer() {
+    const [theme,setTheme]=useState(true)
+    const handleTheme=()=>{
+        setTheme(!theme)
+    }
   return (
     <>
-      <div className="todo-container">
-        <div className="todo-container__theme">
-            <h1 className="todo-container__heading">T O D O</h1>
-            <img src={IconMoon} width={50} height={50}/>
+      <div>
+      <div className={`todo-container ${theme===true?"todo-container__light":"todo-container__dark"}`}>
+        <div className={"todo-container__theme"}>
+            <h1 className={"todo-container__heading"}>T O D O</h1>
+            <img src={theme===true? IconSun:IconMoon} className={"todo-container__themeicon"} onClick={handleTheme} />
         </div>
+        <InputContainer/>
+      </div>
       </div>
     </>
   );

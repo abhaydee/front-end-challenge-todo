@@ -1,0 +1,30 @@
+.input-container {
+  background: white;
+  width: 82%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  &__todo {
+    border: none;
+    outline: none;
+    padding: 16px;
+    margin-left: 1rem;
+  }
+  &__image{
+      width: 1.875rem;
+      height: 1.875rem;
+  }
+}
+.main-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+@media screen and (min-width:768px){
+    .input-container{
+        width: 30%;
+    }
+}
