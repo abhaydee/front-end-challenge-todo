@@ -1,11 +1,12 @@
 import { act } from "react-dom/test-utils";
-import { ADD_TASK, DELETE_TASK, UPDATE_TASK } from "../actiontypes";
+import { ADD_TASK, DELETE_TASK, UPDATE_TASK,THEME } from "../actiontypes";
 
-export let intialState = {
+export let initialState = {
   todos: [],
+  theme:true
 };
 
-export const todoreducer = (state = intialState, action) => {
+export const todoreducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_TASK:
       return {
@@ -27,6 +28,11 @@ export const todoreducer = (state = intialState, action) => {
           action.payload.edittask
         ),
       };
+    case THEME:
+        return{
+            ...state,
+            theme:action.payload
+        }
     default: {
       return state;
     }

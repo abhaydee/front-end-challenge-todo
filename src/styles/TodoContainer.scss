@@ -28,7 +28,13 @@
 .todo-container__theme > img {
   padding-top: 0.5rem;
 }
-
+.todolist-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
 @media screen and (min-width: 768px) {
   .todo-container {
     width: 100%;
