@@ -14,7 +14,11 @@
     height: 2rem;
   }
 }
-
+.todobottom-container{
+  width: 100%;
+  min-height: 150%;
+  margin-top: 4rem;
+}
 .todo-container__theme {
   padding-inline: 2rem;
   display: flex;
