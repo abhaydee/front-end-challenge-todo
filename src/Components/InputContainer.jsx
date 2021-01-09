@@ -17,10 +17,10 @@ function InputContainer() {
     }
     return (
         <div className="main-container">
-            <div className="input-container" style={{backgroundColor:theme===true?"white":"#171723"}}>
+            <div className={`input-container  input-container__${theme===true?"light":"dark"}`} style={{backgroundColor:theme===true?"white":"#171723"}} >
                 <span>
                     <img src={CheckIcon} alt="check-icon" className="input-container__image"/>
-                    <input className="input-container__todo" placeholder="Create a new Todo" onChange={handleChange} value={input} onKeyUp={handleKeyPress} style={{backgroundColor:theme===true?"white":"#171723"}}/>
+                    <input className={`input-container__todo input-container__todo__${theme===true?"light":"dark"}`} placeholder="Create a new Todo" onChange={handleChange} value={input} onKeyUp={handleKeyPress} style={{backgroundColor:theme===true?"white":"#171723"}}/>
                 </span>    
             </div> 
         </div>
