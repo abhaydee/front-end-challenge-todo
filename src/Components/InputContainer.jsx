@@ -6,13 +6,15 @@ import { ADD_TASK } from '../redux/actiontypes';
 function InputContainer() {
     const dispatch=useDispatch();
     const theme=useSelector((state)=>state.todoreducer.theme)
-    const [input,setInput]=useState("")
+    const cachedInput=useSelector((state)=>state.todoreducer.cachedInput)
+    console.log("the cachedinput",cachedInput)
+    const [input,setInput]=useState(cachedInput.input?cachedInput.input:"")
     const handleChange=(event)=>{
         setInput(event.target.value)
     }
     const handleKeyPress=(event)=>{
         if(input!=="" && event.keyCode==13){
-            dispatch({type:ADD_TASK,payload:input})
+            dispatch({type:ADD_TASK,payload:{"completed":false,input}})
         }
     }
     return (

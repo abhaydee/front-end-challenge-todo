@@ -43,14 +43,23 @@
     /* padding-top: 1rem; */
     padding: 8px;
     display: flex;
+    &:hover{
+      cursor: pointer;
+    }
   }
   &__cross {
     width: 20px;
     height: 20px;
     padding-top: 1rem;
+    &:hover{
+      cursor: pointer;
+    }
   }
 }
 
 .input-container__text {
   padding: 1rem;
+  &__completed{
+    text-decoration: line-through;
+  }
 }

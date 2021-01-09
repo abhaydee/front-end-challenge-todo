@@ -1,9 +1,10 @@
-import { act } from "react-dom/test-utils";
-import { ADD_TASK, DELETE_TASK, UPDATE_TASK,THEME } from "../actiontypes";
+import { ADD_TASK, DELETE_TASK, UPDATE_TASK,THEME,EDIT__TASK } from "../actiontypes";
 
 export let initialState = {
   todos: [],
-  theme:true
+  theme:true,
+  cachedInput:{
+  }
 };
 
 export const todoreducer = (state = initialState, action) => {
@@ -11,14 +12,15 @@ export const todoreducer = (state = initialState, action) => {
     case ADD_TASK:
       return {
         ...state,
-        todos: [...state.todos, action.payload],
+        todos: [...state.todos, action.payload]
       };
-      break;
     case DELETE_TASK:
+      state.todos.splice(action.payload, 1)
       return {
         ...state,
-        todos: state.todos.splice(action.payload, 1),
+        todos: [...state.todos]
       };
+      
     case UPDATE_TASK:
       return {
         ...state,
@@ -28,6 +30,11 @@ export const todoreducer = (state = initialState, action) => {
           action.payload.edittask
         ),
       };
+    case EDIT__TASK:
+      return {
+        ...state,
+        cachedInput:{"index":action.payload.index,"input":action.payload.input}
+      }
     case THEME:
         return{
             ...state,
