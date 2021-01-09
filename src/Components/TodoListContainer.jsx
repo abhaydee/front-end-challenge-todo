@@ -30,13 +30,14 @@ function TodoListContainer() {
             key={index}
           >
             <div className="input-container__child">
-              <div className="input-container__child__checkmark">
-                <img
+              <div className="input-container__child__checkmark" onClick={handleComplete}>
+                {completed===true &&
+                  <img
                   src={IconCheck}
                   alt="check-icon"
                   className={"input-container__check"}
-                  onClick={handleComplete}
                 />
+                }
               </div>
               <p className={`input-container__text input-container__text${completed===true?"__completed":""}`} onClick={()=>handleUpdate(index,item.input)}>{item.input}</p>
               <img
