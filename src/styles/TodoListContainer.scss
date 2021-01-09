@@ -6,6 +6,20 @@
   align-items: center;
   justify-content: center;
   border-radius: 8px;
+  &__child {
+    display: flex;
+    justify-content: space-between;
+    &__checkmark {
+      width: 30px;
+      height: 30px;
+      /* background-color: rgb(174, 121, 244); */
+      border-radius: 50%;
+      background-color: #00dbde;
+      background-image: linear-gradient(90deg, #00dbde 0%, #fc00ff 100%);
+      margin-top: 0.5rem;
+    }
+  }
+
   &__todo {
     border: none;
     outline: none;
@@ -16,13 +30,17 @@
     width: 1.875rem;
     height: 1.875rem;
   }
-  &__check{
-    width: 30px;
-    height: 30px;
+  &__check {
+    width: 15px;
+    height: 15px;
+    /* padding-top: 1rem; */
+    padding: 8px;
+    display: flex;
   }
-  &__cross{
-    width: 30px;
-    height: 30px;
+  &__cross {
+    width: 20px;
+    height: 20px;
+    padding-top: 1rem;
   }
 }
 
