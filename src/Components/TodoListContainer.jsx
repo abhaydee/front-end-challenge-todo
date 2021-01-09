@@ -12,8 +12,9 @@ function TodoListContainer() {
       {todolist.map((item) => {
         return (
           <div className="input-container" style={{backgroundColor:theme===true?"white":"#171723"}}>
-            <img />
+            <img src={IconCheck} alt="check-icon" className={"input-container__check"}/>
             <p className="input-container__text">{item}</p>
+            <img src={IconCross} alt="delete-icon" className={"input-container__cross"}/>s
           </div>
         );
       })}
