@@ -19,7 +19,6 @@ function InputContainer() {
         <div className="main-container">
             <div className={`input-container  input-container__${theme===true?"light":"dark"}`} style={{backgroundColor:theme===true?"white":"#171723"}} >
                 <span>
-                    <img src={CheckIcon} alt="check-icon" className="input-container__image"/>
                     <input className={`input-container__todo input-container__todo__${theme===true?"light":"dark"}`} placeholder="Create a new Todo" onChange={handleChange} value={input} onKeyUp={handleKeyPress} style={{backgroundColor:theme===true?"white":"#171723"}}/>
                 </span>    
             </div> 

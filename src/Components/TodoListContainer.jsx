@@ -12,8 +12,7 @@ function TodoListContainer() {
       {todolist.map((item) => {
         return (
           <div
-            className="input-container"
-            style={{ backgroundColor: theme === true ? "white" : "#171723" }}
+            className={`input-container input-container${theme===true?"__light":"__dark"}`}
           >
             <div className="input-container__child">
               <div className="input-container__child__checkmark">

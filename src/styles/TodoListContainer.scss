@@ -19,12 +19,19 @@
       margin-top: 0.5rem;
     }
   }
+  &__light {
+    background-color: white;
+    color:  rgb(23, 23, 35);
+  }
+  &__dark {
+    background-color: rgb(23, 23, 35);
+    color: white;
+  }
 
   &__todo {
     border: none;
     outline: none;
     padding: 16px;
-    margin-left: 1rem;
   }
   &__image {
     width: 1.875rem;
