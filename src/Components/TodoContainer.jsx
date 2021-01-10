@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import IconMoon from "../images/icon-moon.svg";
 import IconSun from "../images/icon-sun.svg";
 import styles from "../styles/TodoContainer.scss";
@@ -9,13 +9,12 @@ function TodoContainer() {
   const [theme, setTheme] = useState(true);
   const dispatch = useDispatch();
   const todolist = useSelector((state) => state.todoreducer.todos);
-  useEffect(()=>{
+  useEffect(() => {
     dispatch({ type: "THEME", payload: theme });
-  },[theme])
+  }, [theme]);
   const handleTheme = () => {
     setTheme(!theme);
   };
-  console.log("the theming ",theme)
   return (
     <>
       <div
@@ -35,7 +34,10 @@ function TodoContainer() {
         <div className="todolist-container">
           <TodoListContainer />
         </div>
-        <div className="todobottom-container" style={{backgroundColor:theme===true?"":"#161621"}}></div>
+        <div
+          className="todobottom-container"
+          style={{ backgroundColor: theme === true ? "" : "#161621" }}
+        ></div>
       </div>
     </>
   );

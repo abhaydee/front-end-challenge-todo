@@ -1,13 +1,12 @@
 import React,{useState} from 'react'
 import styles from "../styles/inputcontainer.scss"
 import {useDispatch,useSelector} from "react-redux"
-import { ADD_TASK, EDIT__TASK } from '../redux/actiontypes';
+import { ADD_TASK, UPDATE_TASK } from '../redux/actiontypes';
 function InputContainer() {
     const dispatch=useDispatch();
     const theme=useSelector((state)=>state.todoreducer.theme)
     const cachedInput=useSelector((state)=>state.todoreducer.cachedInput)
     const [input,setInput]=useState(cachedInput.input?cachedInput.input:"")
-    console.log("the input",input)
     const handleChange=(event)=>{
         setInput(event.target.value)
     }
@@ -16,8 +15,7 @@ function InputContainer() {
             dispatch({type:ADD_TASK,payload:{"completed":false,input}})
         }
         else if(input!==cachedInput.input && event.keyCode==13 && Object.keys(cachedInput).length !== 0){
-            console.log("the cached data",cachedInput)
-            dispatch({type:EDIT__TASK,payload:{"completed":false,"index":cachedInput.index,input:input}})
+            dispatch({type:UPDATE_TASK,payload:{"completed":false,"index":cachedInput.index,updatetask:input}})
         }
     }
     return (
