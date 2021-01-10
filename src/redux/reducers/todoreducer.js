@@ -27,10 +27,11 @@ export const todoreducer = (state = initialState, action) => {
       };
 
     case UPDATE_TASK:
-      state.todos.splice(action.payload.index, 1, action.payload.updatetask);
+      state.todos.splice(action.payload.index, 1, {"completed":action.payload.completed, "input":action.payload.updatetask});
+      console.log("the real array",state.todos)
       return {
         ...state,
-        todos: state.todos,
+        todos: [...state.todos],
       };
     case EDIT__TASK:
       return {
