@@ -18,6 +18,8 @@
   width: 100%;
   min-height: 150%;
   margin-top: 4rem;
+  position: absolute;
+  top: 15.625rem;
 }
 .todo-container__theme {
   padding-inline: 2rem;
@@ -39,6 +41,8 @@
   justify-content: center;
   margin-top: 1rem;
   margin-inline: 1rem;
+  position: relative;
+  z-index: 10;
 }
 @media screen and (min-width: 768px) {
   .todo-container {
