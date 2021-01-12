@@ -5,6 +5,7 @@ import styles from "../styles/TodoContainer.scss";
 import InputContainer from "./InputContainer";
 import { useSelector, useDispatch } from "react-redux";
 import TodoListContainer from "./TodoListContainer";
+import TabsContainer from "./TabsContainer";
 function TodoContainer() {
   const [theme, setTheme] = useState(true);
   const dispatch = useDispatch();
@@ -25,7 +26,7 @@ function TodoContainer() {
         <div className={"todo-container__theme"}>
           <h1 className={"todo-container__heading"}>T O D O</h1>
           <img
-            src={theme === true ? IconSun : IconMoon}
+            src={theme === false ? IconSun : IconMoon}
             className={"todo-container__themeicon"}
             onClick={handleTheme}
           />
@@ -33,6 +34,7 @@ function TodoContainer() {
         <InputContainer />
         <div className="todolist-container">
           <TodoListContainer />
+          <TabsContainer/>
         </div>
         <div
           className="todobottom-container"

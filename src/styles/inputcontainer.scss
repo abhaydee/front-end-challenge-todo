@@ -8,7 +8,7 @@
     border: none;
     text-align: center;
     outline: none;
-    padding: 16px;
+    padding: 25px;
     font-size: 1rem;
     &__light{
       background-color: white;
@@ -42,6 +42,6 @@
 
 @media screen and (min-width:768px){
     .input-container{
-        width: 30% !important;
+        width: 34% !important;
     }
 }
