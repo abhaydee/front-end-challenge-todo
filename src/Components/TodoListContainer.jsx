@@ -34,6 +34,7 @@ function TodoListContainer() {
               <div
                 className="inputlist-container__child__checkmark"
                 onClick={handleComplete}
+                key={index}
               >
                 {completed === true && (
                   <img
