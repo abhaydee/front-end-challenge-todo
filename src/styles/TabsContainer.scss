@@ -8,6 +8,12 @@
   display: flex;
   justify-content: space-between;
   font-family: "Roboto Slab", serif;
+  &__light {
+    background-color: white;
+  }
+  &__dark {
+    background-color: #25273c;
+  }
 }
 .tabs-container > button {
   border: none;
@@ -15,6 +21,9 @@
   background-color: transparent;
   padding: 1.5rem;
   color: #97979f;
+  &:hover{
+      cursor: pointer;
+  }
 }
 .priority-container {
   width: 100%;
@@ -25,12 +34,26 @@
   border-radius: 0.25rem;
   display: flex;
   justify-content: center;
+  &__light {
+    background-color: white;
+  }
+  &__dark {
+    background-color: #25273c;
+  }
 }
 .priority-container > button {
   border: none;
   outline: none;
   background-color: transparent;
   padding: 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #97979f;
+  font-family: "Roboto Slab", serif !important;
+  &:hover {
+    color: #4a84f9;
+    cursor: pointer;
+  }
 }
 
 @media screen and (min-width: 768px) {

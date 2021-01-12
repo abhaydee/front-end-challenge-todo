@@ -7,7 +7,7 @@ import * as types from "../redux/actiontypes";
 function TodoListContainer() {
   const [completed, setCompleted] = useState("");
   const todolist = useSelector((state) => state.todoreducer.todos);
-  console.log("the todolist",todolist)
+  console.log("the todolist", todolist);
   const theme = useSelector((state) => state.todoreducer.theme);
   const dispatch = useDispatch();
   const handleDelete = (index) => {
