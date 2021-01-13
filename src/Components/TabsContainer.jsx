@@ -5,6 +5,12 @@ function TabsContainer() {
   let theme = useSelector((state) => state.todoreducer.theme);
   console.log("the theme", theme);
   const todolist=useSelector((state)=>state.todoreducer.todos)
+  const index=todolist.map((item,index)=>{
+    if(item.completed==true){
+      return index
+    }
+  })
+  console.log("the completed index",index)
   return (
     <>
         <div
