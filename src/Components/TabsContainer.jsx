@@ -4,6 +4,7 @@ import styles from "../styles/TabsContainer.scss";
 function TabsContainer() {
   let theme = useSelector((state) => state.todoreducer.theme);
   console.log("the theme", theme);
+  const todolist=useSelector((state)=>state.todoreducer.todos)
   return (
     <>
         <div
@@ -12,7 +13,7 @@ function TabsContainer() {
           } animate__animated animate__bounce`}
         >
           <button>
-            <span>{`5 items left`}</span>
+            <span>{`${todolist.length} items left`}</span>
           </button>
           <button>
             <span>{`Clear Completed`}</span>
