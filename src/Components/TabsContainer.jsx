@@ -9,7 +9,7 @@ function TabsContainer() {
         <div
           className={`tabs-container tabs-container${
             theme === true ? "__light" : "__dark"
-          }`}
+          } animate__animated animate__bounce`}
         >
           <button>
             <span>{`5 items left`}</span>

@@ -17,7 +17,7 @@ export const todoreducer = (state = initialState, action) => {
     case ADD_TASK:
       return {
         ...state,
-        todos: [...state.todos, action.payload],
+        todos: [...state.todos, {"completed":action.payload.completed,input:action.payload.input}],
       };
     case DELETE_TASK:
       state.todos.splice(action.payload, 1);

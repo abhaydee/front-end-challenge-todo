@@ -5,7 +5,6 @@ import IconCheck from "../images/icon-check.svg";
 import IconCross from "../images/icon-cross.svg";
 import * as types from "../redux/actiontypes";
 function TodoListContainer() {
-  const [completed, setCompleted] = useState("");
   const todolist = useSelector((state) => state.todoreducer.todos);
   console.log("the todolist", todolist);
   const theme = useSelector((state) => state.todoreducer.theme);
@@ -19,7 +18,12 @@ function TodoListContainer() {
       payload: { index: index, input: input },
     });
   };
-  const handleComplete = () => [setCompleted(!completed)];
+  const handleComplete = (index,input) => {
+    dispatch({
+      type:types.UPDATE_TASK,
+      payload:{"index":index,"completed":true,"updatetask":input}
+    })
+  };
   return (
     <>
       {todolist.map((item, index) => {
@@ -33,10 +37,10 @@ function TodoListContainer() {
             <div className="inputlist-container__child">
               <div
                 className="inputlist-container__child__checkmark"
-                onClick={handleComplete}
+                onClick={()=>handleComplete(index,item.input)}
                 key={index}
               >
-                {completed === true && (
+                {item.completed === true && (
                   <img
                     src={IconCheck}
                     alt="check-icon"
@@ -46,7 +50,7 @@ function TodoListContainer() {
               </div>
               <p
                 className={`inputlist-container__text inputlist-container__text${
-                  completed === true ? "__completed" : ""
+                  item.completed === true ? "__completed" : ""
                 }`}
                 onClick={() => handleUpdate(index, item.input)}
               >
