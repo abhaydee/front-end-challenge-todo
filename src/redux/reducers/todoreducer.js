@@ -5,6 +5,7 @@ import {
   THEME,
   EDIT__TASK,
   ACTIVE_TASK,
+  COMPLETE_TASK,
 } from "../actiontypes";
 
 export let initialState = {
@@ -18,7 +19,10 @@ export const todoreducer = (state = initialState, action) => {
     case ADD_TASK:
       return {
         ...state,
-        todos: [...state.todos, {"completed":action.payload.completed,input:action.payload.input}],
+        todos: [
+          ...state.todos,
+          { completed: action.payload.completed, input: action.payload.input },
+        ],
       };
     case DELETE_TASK:
       state.todos.splice(action.payload, 1);
@@ -47,8 +51,13 @@ export const todoreducer = (state = initialState, action) => {
     case ACTIVE_TASK:
       return {
         ...state,
-        todos:action.activeList
-      }
+        todos: action.activeList,
+      };
+    case COMPLETE_TASK:
+      return {
+        ...state,
+        todos: action.completeList,
+      };
     case THEME:
       return {
         ...state,
