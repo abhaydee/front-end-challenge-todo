@@ -4,7 +4,6 @@ import { ACTIVE_TASK, COMPLETE_TASK } from "../redux/actiontypes";
 import styles from "../styles/TabsContainer.scss";
 function TabsContainer() {
   let theme = useSelector((state) => state.todoreducer.theme);
-  const [taskState, setTaskState] = useState("All");
   const dispatch = useDispatch();
   const todolist = useSelector((state) => state.todoreducer.todos);
   const index = todolist.map((item, index) => {
@@ -13,14 +12,12 @@ function TabsContainer() {
     }
   });
   const handleComplete = () => {
-    setTaskState("Active")
     let completeIndex = todolist.filter((item, index) => {
       return item.completed == true;
     });
     dispatch({ type: COMPLETE_TASK, completeList: completeIndex });
   };
   const handleActive = () => {
-    setTaskState("Completed")
     let activeIndex = todolist.filter((item, index) => {
       return item.completed == false;
     });
@@ -36,7 +33,7 @@ function TabsContainer() {
         <button>
           <span>{`${todolist.length} items left`}</span>
         </button>
-        <button>
+        <button onClick={handleActive}>
           <span>{`Clear Completed`}</span>
         </button>
       </div>
