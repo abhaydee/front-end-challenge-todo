@@ -8,7 +8,6 @@ function TodoListContainer() {
   const todolist = useSelector((state) => state.todoreducer.todos);
   console.log("the todolist", todolist);
   const theme = useSelector((state) => state.todoreducer.theme);
-  const [completedstate,setCompleted]=useState(false)
   const dispatch = useDispatch();
   const handleDelete = (index) => {
     dispatch({ type: types.DELETE_TASK, payload: index });
@@ -19,11 +18,11 @@ function TodoListContainer() {
       payload: { index: index, input: input },
     });
   };
-  const handleComplete = (index,input) => {
+  const handleComplete = (index, input) => {
     dispatch({
-      type:types.UPDATE_TASK,
-      payload:{"index":index,"completed":true,"updatetask":input}
-    })
+      type: types.UPDATE_TASK,
+      payload: { index: index, completed: true, updatetask: input },
+    });
   };
   return (
     <>
@@ -38,7 +37,7 @@ function TodoListContainer() {
             <div className="inputlist-container__child">
               <div
                 className="inputlist-container__child__checkmark"
-                onClick={()=>handleComplete(index,item.input)}
+                onClick={() => handleComplete(index, item.input)}
                 key={index}
               >
                 {item.completed === true && (

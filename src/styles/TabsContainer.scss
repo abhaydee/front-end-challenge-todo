@@ -54,6 +54,9 @@
     color: #4a84f9;
     cursor: pointer;
   }
+  &:focus{
+    color: #4a84f9;
+  }
 }
 
 @media screen and (min-width: 768px) {
