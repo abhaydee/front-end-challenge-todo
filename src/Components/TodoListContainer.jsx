@@ -8,6 +8,7 @@ function TodoListContainer() {
   const todolist = useSelector((state) => state.todoreducer.todos);
   console.log("the todolist", todolist);
   const theme = useSelector((state) => state.todoreducer.theme);
+  const [completedstate,setCompleted]=useState(false)
   const dispatch = useDispatch();
   const handleDelete = (index) => {
     dispatch({ type: types.DELETE_TASK, payload: index });

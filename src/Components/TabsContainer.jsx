@@ -1,8 +1,10 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector,useDispatch} from "react-redux";
+import { ACTIVE_TASK } from "../redux/actiontypes";
 import styles from "../styles/TabsContainer.scss";
 function TabsContainer() {
   let theme = useSelector((state) => state.todoreducer.theme);
+  const dispatch=useDispatch();
   console.log("the theme", theme);
   const todolist=useSelector((state)=>state.todoreducer.todos)
   const index=todolist.map((item,index)=>{
@@ -10,7 +12,13 @@ function TabsContainer() {
       return index
     }
   })
-  console.log("the completed index",index)
+  const handleActive=()=>{
+    console.log("hitting")
+    let activeIndex=todolist.filter((item,index)=>{
+      return item.completed==false
+    })
+    dispatch({type:ACTIVE_TASK,activeList:activeIndex})
+  }
   return (
     <>
         <div
@@ -31,7 +39,7 @@ function TabsContainer() {
         }`}
       >
         <button>All</button>
-        <button>Active</button>
+        <button onClick={handleActive}>Active</button>
         <button>Completed</button>
       </div>
     </>

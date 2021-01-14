@@ -4,6 +4,7 @@ import {
   UPDATE_TASK,
   THEME,
   EDIT__TASK,
+  ACTIVE_TASK,
 } from "../actiontypes";
 
 export let initialState = {
@@ -43,6 +44,11 @@ export const todoreducer = (state = initialState, action) => {
           input: action.payload.input,
         },
       };
+    case ACTIVE_TASK:
+      return {
+        ...state,
+        todos:action.activeList
+      }
     case THEME:
       return {
         ...state,
