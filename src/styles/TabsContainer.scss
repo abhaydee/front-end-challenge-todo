@@ -23,6 +23,7 @@
   color: #97979f;
   &:hover{
       cursor: pointer;
+      color: #f98e1d;
   }
 }
 .priority-container {
@@ -51,11 +52,11 @@
   color: #97979f;
   font-family: "Roboto Slab", serif !important;
   &:hover {
-    color: #4a84f9;
+    color: #f98e1d;
     cursor: pointer;
   }
   &:focus{
-    color: #4a84f9;
+    color: #f98e1d;
   }
 }
 

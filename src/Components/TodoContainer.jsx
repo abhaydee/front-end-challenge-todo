@@ -24,17 +24,17 @@ function TodoContainer() {
         }`}
       >
         <div className={"todo-container__theme"}>
-          <h1 className={"todo-container__heading"}>T O D O</h1>
+          <h1 className={"todo-container__heading animate__animated animate__bounceInDown"}>T O D O</h1>
           <img
             src={theme === false ? IconSun : IconMoon}
-            className={"todo-container__themeicon"}
+            className={"todo-container__themeicon animate__animated animate__bounceInDown"}
             onClick={handleTheme}
           />
         </div>
         <InputContainer />
         <div className="todolist-container">
           <TodoListContainer />
-          <TabsContainer/>
+          <TabsContainer />
         </div>
         <div
           className="todobottom-container"

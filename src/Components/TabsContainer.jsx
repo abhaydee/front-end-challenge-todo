@@ -28,7 +28,7 @@ function TabsContainer() {
       <div
         className={`tabs-container tabs-container${
           theme === true ? "__light" : "__dark"
-        } animate__animated animate__bounce`}
+        } animate__animated animate__lightSpeedInLeft`}
       >
         <button>
           <span>{`${todolist.length} items left`}</span>
@@ -38,7 +38,7 @@ function TabsContainer() {
         </button>
       </div>
       <div
-        className={`priority-container priority-container${
+        className={`priority-container animate__animated animate__lightSpeedInRight priority-container${
           theme === true ? "__light" : "__dark"
         }`}
       >
