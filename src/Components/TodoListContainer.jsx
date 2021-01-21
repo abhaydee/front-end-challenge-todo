@@ -48,7 +48,7 @@ function TodoListContainer() {
         });
       }
     }
-  }, [completestate, indexvalue, inputvalue]);
+  }, [completestate, indexvalue, inputvalue,dispatch]);
   function listMapped() {
     if (completedTodo.length > 0) {
       return completedTodo;

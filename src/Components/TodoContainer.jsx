@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import IconMoon from "../images/icon-moon.svg";
 import IconSun from "../images/icon-sun.svg";
 import InputContainer from "./InputContainer";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import TodoListContainer from "./TodoListContainer";
 import TabsContainer from "./TabsContainer";
 import "../styles/TodoContainer.scss";
@@ -11,7 +11,7 @@ function TodoContainer() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch({ type: "THEME", payload: theme });
-  }, [theme]);
+  }, [theme,dispatch]);
   const handleTheme = () => {
     setTheme(!theme);
   };
