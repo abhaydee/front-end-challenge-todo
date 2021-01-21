@@ -10,6 +10,7 @@ import {
 
 export let initialState = {
   todos: [],
+  completedtodo:[],
   theme: true,
   cachedInput: {},
 };
@@ -56,7 +57,7 @@ export const todoreducer = (state = initialState, action) => {
     case COMPLETE_TASK:
       return {
         ...state,
-        todos: action.completeList,
+        completedtodo: action.completeList,
       };
     case THEME:
       return {

@@ -38,8 +38,12 @@ function TabsContainer() {
         }`}
       >
         <button tabIndex="0">All</button>
-        <button tabIndex="0" onClick={handleActive}>Active</button>
-        <button tabIndex="0" onClick={handleComplete}>Completed</button>
+        <button tabIndex="0" onClick={handleActive}>
+          Active
+        </button>
+        <button tabIndex="0" onClick={handleComplete}>
+          Completed
+        </button>
       </div>
     </>
   );
