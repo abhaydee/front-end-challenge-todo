@@ -9,7 +9,6 @@ import "../styles/TodoContainer.scss";
 function TodoContainer() {
   const [theme, setTheme] = useState(true);
   const dispatch = useDispatch();
-  const todolist = useSelector((state) => state.todoreducer.todos);
   useEffect(() => {
     dispatch({ type: "THEME", payload: theme });
   }, [theme]);
