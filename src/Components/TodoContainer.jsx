@@ -26,6 +26,7 @@ function TodoContainer() {
         <div className={"todo-container__theme"}>
           <h1 className={"todo-container__heading animate__animated animate__bounceInDown"}>T O D O</h1>
           <img
+            alt="theme-icon"
             src={theme === false ? IconSun : IconMoon}
             className={"todo-container__themeicon animate__animated animate__bounceInDown"}
             onClick={handleTheme}

@@ -2,3 +2,7 @@
     font-family: 'Roboto', sans-serif !important;
     font-family: 'Roboto Slab', serif !important;
 }
+@font-face {
+    font-family: 'Roboto Slab';
+    src: local('Roboto Slab'), url("../fonts/Roboto-Slab.ttf") format('truetype');
+  }

@@ -17,6 +17,7 @@ function TabsContainer() {
       return item.completed === false;
     });
     dispatch({ type: ACTIVE_TASK, activeList: activeIndex });
+    dispatch({ type: COMPLETE_TASK, completeList: [] });
   };
   return (
     <>

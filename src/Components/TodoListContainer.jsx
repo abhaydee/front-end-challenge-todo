@@ -7,6 +7,9 @@ import * as types from "../redux/actiontypes";
 function TodoListContainer() {
   const todolist = useSelector((state) => state.todoreducer.todos);
   const theme = useSelector((state) => state.todoreducer.theme);
+  const completedTodo = useSelector((state) => state.todoreducer.completedTodo);
+  console.log("the completedTodo", completedTodo);
+  console.log("the todolist", todolist);
   const [completestate, setCompletedState] = useState(false);
   const [indexvalue, setIndexValue] = useState("-1");
   const [inputvalue, setInputValue] = useState("");
@@ -48,9 +51,15 @@ function TodoListContainer() {
       }
     }
   }, [completestate, indexvalue, inputvalue]);
+  function listMapped() {
+    if (completedTodo.length > 0) {
+      return completedTodo;
+    }
+    return todolist;
+  }
   return (
     <>
-      {todolist.map((item, index) => {
+      {listMapped().map((item, index) => {
         return (
           <div
             className={`inputlist-container inputlist-container${
