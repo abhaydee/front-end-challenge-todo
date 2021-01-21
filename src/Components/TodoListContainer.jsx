@@ -47,7 +47,7 @@ function TodoListContainer() {
         });
       }
     }
-  }, [completestate, indexvalue, inputvalue,dispatch]);
+  }, [completestate, indexvalue, inputvalue]);
   return (
     <>
       {todolist.map((item, index) => {
