@@ -8,8 +8,6 @@ function TodoListContainer() {
   const todolist = useSelector((state) => state.todoreducer.todos);
   const theme = useSelector((state) => state.todoreducer.theme);
   const completedTodo = useSelector((state) => state.todoreducer.completedTodo);
-  console.log("the completedTodo", completedTodo);
-  console.log("the todolist", todolist);
   const [completestate, setCompletedState] = useState(false);
   const [indexvalue, setIndexValue] = useState("-1");
   const [inputvalue, setInputValue] = useState("");
