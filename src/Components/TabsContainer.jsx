@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { ACTIVE_TASK, COMPLETE_TASK } from "../redux/actiontypes";
-import styles from "../styles/TabsContainer.scss";
+import "../styles/TabsContainer.scss";
 function TabsContainer() {
   let theme = useSelector((state) => state.todoreducer.theme);
   const dispatch = useDispatch();

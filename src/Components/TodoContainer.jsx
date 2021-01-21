@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import IconMoon from "../images/icon-moon.svg";
 import IconSun from "../images/icon-sun.svg";
-import styles from "../styles/TodoContainer.scss";
 import InputContainer from "./InputContainer";
 import { useSelector, useDispatch } from "react-redux";
 import TodoListContainer from "./TodoListContainer";
 import TabsContainer from "./TabsContainer";
+import "../styles/TodoContainer.scss";
 function TodoContainer() {
   const [theme, setTheme] = useState(true);
   const dispatch = useDispatch();

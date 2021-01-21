@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import styles from "../styles/TodoListContainer.scss";
 import IconCheck from "../images/icon-check.svg";
 import IconCross from "../images/icon-cross.svg";
 import * as types from "../redux/actiontypes";
+import "../styles/TodoListContainer.scss";
 function TodoListContainer() {
   const todolist = useSelector((state) => state.todoreducer.todos);
   const theme = useSelector((state) => state.todoreducer.theme);

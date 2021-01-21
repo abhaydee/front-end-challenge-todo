@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
-import styles from "../styles/inputcontainer.scss"
 import {useDispatch,useSelector} from "react-redux"
 import { ADD_TASK, UPDATE_TASK } from '../redux/actiontypes';
+import "../styles/inputcontainer.scss"
 function InputContainer() {
     const dispatch=useDispatch();
     const theme=useSelector((state)=>state.todoreducer.theme)
