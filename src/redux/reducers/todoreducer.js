@@ -11,6 +11,7 @@ import {
 export let initialState = {
   todos: [],
   completedTodo:[],
+  filterTodo:[],
   theme: true,
   cachedInput: {},
 };
@@ -52,12 +53,12 @@ export const todoreducer = (state = initialState, action) => {
     case ACTIVE_TASK:
       return {
         ...state,
-        todos: action.activeList,
+        filterTodo: {filter:"active",list:action.activeList},
       };
     case COMPLETE_TASK:
       return {
         ...state,
-        completedTodo: action.completeList,
+        filterTodo: {filter:"complete",list:action.completeList},
       };
     case THEME:
       return {

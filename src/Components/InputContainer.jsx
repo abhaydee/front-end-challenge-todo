@@ -13,6 +13,7 @@ function InputContainer() {
     const handleKeyPress=(event)=>{
         if(input!=="" && event.keyCode===13 && Object.keys(cachedInput).length === 0){
             dispatch({type:ADD_TASK,payload:{"completed":false,input}})
+            setInput("")
         }
         else if(input!==cachedInput.input && event.keyCode===13 && Object.keys(cachedInput).length !== 0){
             dispatch({type:UPDATE_TASK,payload:{"completed":false,"index":cachedInput.index,updatetask:input}})

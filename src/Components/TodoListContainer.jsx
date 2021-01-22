@@ -6,8 +6,10 @@ import * as types from "../redux/actiontypes";
 import "../styles/TodoListContainer.scss";
 function TodoListContainer() {
   const todolist = useSelector((state) => state.todoreducer.todos);
+  console.log("the todolist", todolist);
   const theme = useSelector((state) => state.todoreducer.theme);
-  const completedTodo = useSelector((state) => state.todoreducer.completedTodo);
+  const filterTodo = useSelector((state) => state.todoreducer.filterTodo);
+  console.log("the filter todo list", filterTodo);
   const [completestate, setCompletedState] = useState(false);
   const [indexvalue, setIndexValue] = useState("-1");
   const [inputvalue, setInputValue] = useState("");
@@ -48,10 +50,12 @@ function TodoListContainer() {
         });
       }
     }
-  }, [completestate, indexvalue, inputvalue,dispatch]);
+  }, [completestate, indexvalue, inputvalue]);
   function listMapped() {
-    if (completedTodo.length > 0) {
-      return completedTodo;
+    if (filterTodo?.filter === "complete") {
+      return filterTodo.list;
+    } else if (filterTodo.filter === "active") {
+      return filterTodo.list;
     }
     return todolist;
   }

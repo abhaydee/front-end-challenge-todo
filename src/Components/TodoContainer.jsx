@@ -11,7 +11,7 @@ function TodoContainer() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch({ type: "THEME", payload: theme });
-  }, [theme,dispatch]);
+  }, [theme]);
   const handleTheme = () => {
     setTheme(!theme);
   };
