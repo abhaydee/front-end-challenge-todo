@@ -10,13 +10,13 @@ function TabsContainer() {
     let completeIndex = todolist.filter((item, index) => {
       return item.completed === true;
     });
-    dispatch({ type: COMPLETE_TASK, completeList: completeIndex });
+    dispatch({ type: COMPLETE_TASK, completeList: completeIndex,filter:"complete" });
   };
   const handleActive = () => {
     let activeIndex = todolist.filter((item, index) => {
       return item.completed === false;
     });
-    dispatch({ type: ACTIVE_TASK, activeList: activeIndex });
+    dispatch({ type: ACTIVE_TASK, activeList: activeIndex, filter:"active" });
     // dispatch({ type: COMPLETE_TASK, completeList: [] });
   };
   return (

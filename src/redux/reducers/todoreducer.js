@@ -53,12 +53,12 @@ export const todoreducer = (state = initialState, action) => {
     case ACTIVE_TASK:
       return {
         ...state,
-        filterTodo: {filter:"active",list:action.activeList},
+        filterTodo: {filter:action.filter,list:action.activeList},
       };
     case COMPLETE_TASK:
       return {
         ...state,
-        filterTodo: {filter:"complete",list:action.completeList},
+        filterTodo: {filter:action.filter,list:action.completeList},
       };
     case THEME:
       return {

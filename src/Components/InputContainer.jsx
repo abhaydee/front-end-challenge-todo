@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import {useDispatch,useSelector} from "react-redux"
-import { ADD_TASK, UPDATE_TASK } from '../redux/actiontypes';
+import { ACTIVE_TASK, ADD_TASK, UPDATE_TASK } from '../redux/actiontypes';
 import "../styles/inputcontainer.scss"
 function InputContainer() {
     const dispatch=useDispatch();
@@ -19,10 +19,13 @@ function InputContainer() {
             dispatch({type:UPDATE_TASK,payload:{"completed":false,"index":cachedInput.index,updatetask:input}})
         }
     }
+    const handleState=()=>{
+        dispatch({type:ACTIVE_TASK,activeList: [], filter:"" })
+    }
     return (
         <div className="main-container">
             <div className={`input-container  input-container__${theme===true?"light":"dark"}`} style={{backgroundColor:theme===true?"white":"#25273c"}} >
-                    <input className={`input-container__todo input-container__todo__${theme===true?"light":"dark"}`} placeholder="Create a new Todo and press enter" label="data-input" onChange={handleChange} value={input} onKeyUp={handleKeyPress} style={{backgroundColor:theme===true?"white":"#25273c"}}/>
+                    <input onClick={handleState} className={`input-container__todo input-container__todo__${theme===true?"light":"dark"}`} placeholder="Create a new Todo and press enter" label="data-input" onChange={handleChange} value={input} onKeyUp={handleKeyPress} style={{backgroundColor:theme===true?"white":"#25273c"}}/>
             </div> 
         </div>
     )
