@@ -1,11 +1,13 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { ACTIVE_TASK, COMPLETE_TASK } from "../redux/actiontypes";
+import { listMapped } from "../services/listService";
 import "../styles/TabsContainer.scss";
 function TabsContainer() {
   let theme = useSelector((state) => state.todoreducer.theme);
   const dispatch = useDispatch();
   const todolist = useSelector((state) => state.todoreducer.todos);
+  const filterTodo=useSelector((state)=>state.todoreducer.filterTodo)
   const handleComplete = () => {
     let completeIndex = todolist.filter((item, index) => {
       return item.completed === true;
@@ -30,7 +32,7 @@ function TabsContainer() {
         } animate__animated animate__lightSpeedInLeft`}
       >
         <button>
-          <span>{`${todolist.length} items left`}</span>
+          <span>{`${listMapped(filterTodo,todolist).length} items left`}</span>
         </button>
         <button onClick={handleActive}>
           <span>{`Clear Completed`}</span>

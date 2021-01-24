@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import IconCheck from "../images/icon-check.svg";
 import IconCross from "../images/icon-cross.svg";
 import * as types from "../redux/actiontypes";
+import { listMapped } from "../services/listService";
 import "../styles/TodoListContainer.scss";
 function TodoListContainer() {
   const todolist = useSelector((state) => state.todoreducer.todos);
@@ -52,19 +53,9 @@ function TodoListContainer() {
       }
     }
   }, [completestate, indexvalue, inputvalue,dispatch]);
-  function listMapped() {
-    if (filterTodo?.filter === "complete") {
-      return filterTodo.list;
-    } else if (filterTodo.filter === "active") {
-      return filterTodo.list;
-    } else if (filterTodo.filter === "all") {
-      return filterTodo.list;
-    }
-    return todolist
-  }
   return (
     <>
-      {listMapped().map((item, index) => {
+      {listMapped(filterTodo,todolist).map((item, index) => {
         return (
           <div
             className={`inputlist-container inputlist-container${
