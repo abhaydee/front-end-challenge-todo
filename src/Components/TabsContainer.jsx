@@ -19,6 +19,9 @@ function TabsContainer() {
     dispatch({ type: ACTIVE_TASK, activeList: activeIndex, filter:"active" });
     // dispatch({ type: COMPLETE_TASK, completeList: [] });
   };
+  const handleAll=()=>{
+    dispatch({type:ACTIVE_TASK,activeList:todolist,filter:"all"})
+  }
   return (
     <>
       <div
@@ -38,7 +41,7 @@ function TabsContainer() {
           theme === true ? "__light" : "__dark"
         }`}
       >
-        <button tabIndex="0">All</button>
+        <button tabIndex="0" onClick={handleAll}>All</button>
         <button tabIndex="0" onClick={handleActive}>
           Active
         </button>

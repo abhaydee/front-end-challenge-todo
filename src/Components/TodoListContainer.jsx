@@ -39,6 +39,7 @@ function TodoListContainer() {
             updatetask: inputvalue,
           },
         });
+        dispatch({ type: types.ACTIVE_TASK, activeList: [], filter: "" });
       } else {
         dispatch({
           type: types.UPDATE_TASK,
@@ -50,14 +51,16 @@ function TodoListContainer() {
         });
       }
     }
-  }, [completestate, indexvalue, inputvalue]);
+  }, [completestate, indexvalue, inputvalue,dispatch]);
   function listMapped() {
     if (filterTodo?.filter === "complete") {
       return filterTodo.list;
     } else if (filterTodo.filter === "active") {
       return filterTodo.list;
+    } else if (filterTodo.filter === "all") {
+      return filterTodo.list;
     }
-    return todolist;
+    return todolist
   }
   return (
     <>
