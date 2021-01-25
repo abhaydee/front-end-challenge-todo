@@ -7,10 +7,8 @@ import { listMapped } from "../services/listService";
 import "../styles/TodoListContainer.scss";
 function TodoListContainer() {
   const todolist = useSelector((state) => state.todoreducer.todos);
-  console.log("the todolist", todolist);
   const theme = useSelector((state) => state.todoreducer.theme);
   const filterTodo = useSelector((state) => state.todoreducer.filterTodo);
-  console.log("the filter todo list", filterTodo);
   const [completestate, setCompletedState] = useState(false);
   const [indexvalue, setIndexValue] = useState("-1");
   const [inputvalue, setInputValue] = useState("");

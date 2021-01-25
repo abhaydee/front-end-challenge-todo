@@ -19,7 +19,6 @@ function TabsContainer() {
       return item.completed === false;
     });
     dispatch({ type: ACTIVE_TASK, activeList: activeIndex, filter:"active" });
-    // dispatch({ type: COMPLETE_TASK, completeList: [] });
   };
   const handleAll=()=>{
     dispatch({type:ACTIVE_TASK,activeList:todolist,filter:"all"})
