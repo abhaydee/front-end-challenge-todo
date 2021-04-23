@@ -7,22 +7,26 @@ function TabsContainer() {
   let theme = useSelector((state) => state.todoreducer.theme);
   const dispatch = useDispatch();
   const todolist = useSelector((state) => state.todoreducer.todos);
-  const filterTodo=useSelector((state)=>state.todoreducer.filterTodo)
+  const filterTodo = useSelector((state) => state.todoreducer.filterTodo);
   const handleComplete = () => {
     let completeIndex = todolist.filter((item, index) => {
       return item.completed === true;
     });
-    dispatch({ type: COMPLETE_TASK, completeList: completeIndex,filter:"complete" });
+    dispatch({
+      type: COMPLETE_TASK,
+      completeList: completeIndex,
+      filter: "complete",
+    });
   };
   const handleActive = () => {
     let activeIndex = todolist.filter((item, index) => {
       return item.completed === false;
     });
-    dispatch({ type: ACTIVE_TASK, activeList: activeIndex, filter:"active" });
+    dispatch({ type: ACTIVE_TASK, activeList: activeIndex, filter: "active" });
   };
-  const handleAll=()=>{
-    dispatch({type:ACTIVE_TASK,activeList:todolist,filter:"all"})
-  }
+  const handleAll = () => {
+    dispatch({ type: ACTIVE_TASK, activeList: todolist, filter: "all" });
+  };
   return (
     <>
       <div
@@ -31,7 +35,7 @@ function TabsContainer() {
         } animate__animated animate__lightSpeedInLeft`}
       >
         <button>
-          <span>{`${listMapped(filterTodo,todolist).length} items left`}</span>
+          <span>{`${listMapped(filterTodo, todolist).length} items left`}</span>
         </button>
         <button onClick={handleActive}>
           <span>{`Clear Completed`}</span>
@@ -42,7 +46,9 @@ function TabsContainer() {
           theme === true ? "__light" : "__dark"
         }`}
       >
-        <button tabIndex="0" onClick={handleAll}>All</button>
+        <button tabIndex="0" onClick={handleAll}>
+          All
+        </button>
         <button tabIndex="0" onClick={handleActive}>
           Active
         </button>

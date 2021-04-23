@@ -50,10 +50,10 @@ function TodoListContainer() {
         });
       }
     }
-  }, [completestate, indexvalue, inputvalue,dispatch]);
+  }, [completestate, indexvalue, inputvalue, dispatch]);
   return (
     <>
-      {listMapped(filterTodo,todolist).map((item, index) => {
+      {listMapped(filterTodo, todolist).map((item, index) => {
         return (
           <div
             className={`inputlist-container inputlist-container${

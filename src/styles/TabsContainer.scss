@@ -21,9 +21,9 @@
   background-color: transparent;
   padding: 1.5rem;
   color: #97979f;
-  &:hover{
-      cursor: pointer;
-      color: #f98e1d;
+  &:hover {
+    cursor: pointer;
+    color: #f98e1d;
   }
 }
 .priority-container {
@@ -55,7 +55,7 @@
     color: #f98e1d;
     cursor: pointer;
   }
-  &:focus{
+  &:focus {
     color: #f98e1d;
   }
 }

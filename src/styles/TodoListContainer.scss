@@ -20,7 +20,7 @@
   }
   &__light {
     background-color: white;
-    color:  rgb(23, 23, 35);
+    color: rgb(23, 23, 35);
   }
   &__dark {
     background-color: #25273c;
@@ -42,7 +42,7 @@
     /* padding-top: 1rem; */
     padding: 8px;
     display: flex;
-    &:hover{
+    &:hover {
       cursor: pointer;
     }
   }
@@ -50,7 +50,7 @@
     width: 20px;
     height: 20px;
     padding-top: 0.5rem;
-    &:hover{
+    &:hover {
       cursor: pointer;
     }
   }
@@ -58,12 +58,12 @@
 
 .inputlist-container__text {
   padding: 0.25rem;
-  &__completed{
+  &__completed {
     text-decoration: line-through;
   }
 }
-@media screen and (min-width:768px){
-  .inputlist-container{
+@media screen and (min-width: 768px) {
+  .inputlist-container {
     width: 33%;
   }
 }

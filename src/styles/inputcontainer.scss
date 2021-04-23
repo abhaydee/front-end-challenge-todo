@@ -12,38 +12,38 @@
     width: 100%;
     border-radius: 00.25rem;
     font-size: 1rem;
-    &__light{
+    &__light {
       background-color: white;
       color: black;
     }
-    &__dark{
-      background:#25273c;
+    &__dark {
+      background: #25273c;
       color: white;
     }
   }
-  &__image{
-      width: 1.875rem;
-      height: 1.875rem;
+  &__image {
+    width: 1.875rem;
+    height: 1.875rem;
   }
-  &__light{
+  &__light {
     background-color: white;
     color: black;
   }
-  &__dark{
-    background:#25273c;
+  &__dark {
+    background: #25273c;
     color: white;
   }
 }
-.main-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 2rem;
-    margin-inline: 2rem;
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  margin-inline: 2rem;
 }
 
-@media screen and (min-width:768px){
-    .input-container{
-        width: 34% !important;
-    }
+@media screen and (min-width: 768px) {
+  .input-container {
+    width: 34% !important;
+  }
 }

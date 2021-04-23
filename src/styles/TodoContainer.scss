@@ -14,9 +14,9 @@
     height: 2rem;
   }
 }
-.todobottom-container{
+.todobottom-container {
   width: 100%;
-  min-height: 150%;
+  min-height: 100vh;
   margin-top: 4rem;
   position: absolute;
   top: 15.625rem;
@@ -34,7 +34,7 @@
 .todo-container__theme > img {
   padding-top: 0.5rem;
 }
-.todolist-container{
+.todolist-container {
   display: flex;
   flex-direction: column;
   align-items: center;
