@@ -12,8 +12,7 @@ const store = createStore(rootreducers, persistedStorage);
 function throttle(func, delay) {
   let flag = true;
   return function () {
-    let context = this,
-      args = arguments;
+    let context = this;
     if (flag) {
       func.apply(context, arguments);
       flag = false;
