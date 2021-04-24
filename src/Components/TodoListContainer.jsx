@@ -22,6 +22,7 @@ function TodoListContainer() {
       payload: { index: index, input: input },
     });
   };
+  console.log("the list mapped", listMapped(filterTodo, todolist));
   const handleComplete = (index, input) => {
     setIndexValue(index);
     setInputValue(input);

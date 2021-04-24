@@ -6,8 +6,8 @@ import { Provider } from "react-redux";
 import { createStore } from "redux";
 import rootreducers from "./redux/rootreducers";
 import { loadStorage, saveStorage } from "./services/localStorage";
-const persistedStorage = loadStorage();
-const store = createStore(rootreducers, persistedStorage);
+export const persistedStorage = loadStorage();
+export const store = createStore(rootreducers, persistedStorage);
 
 function throttle(func, delay) {
   let flag = true;

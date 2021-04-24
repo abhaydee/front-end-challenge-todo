@@ -6,8 +6,13 @@ import { useDispatch } from "react-redux";
 import TodoListContainer from "./TodoListContainer";
 import TabsContainer from "./TabsContainer";
 import "../styles/TodoContainer.scss";
+import { persistedStorage } from "../index";
 function TodoContainer() {
-  const [theme, setTheme] = useState(true);
+  const [theme, setTheme] = useState(
+    persistedStorage?.todoreducer?.theme
+      ? persistedStorage?.todoreducer?.theme
+      : false
+  );
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch({ type: "THEME", payload: theme });
