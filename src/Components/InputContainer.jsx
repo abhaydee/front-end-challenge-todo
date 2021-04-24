@@ -44,7 +44,10 @@ function InputContainer() {
         className={`input-container  input-container__${
           theme === true ? "light" : "dark"
         }`}
-        style={{ backgroundColor: theme === true ? "white" : "#25273c" }}
+        style={{
+          background: theme === true ? "white" : "#25273c",
+          transition: "background 0.3s ease",
+        }}
       >
         <input
           onClick={handleState}
@@ -56,7 +59,10 @@ function InputContainer() {
           onChange={handleChange}
           value={input}
           onKeyUp={handleKeyPress}
-          style={{ backgroundColor: theme === true ? "white" : "#25273c" }}
+          style={{
+            background: theme === true ? "white" : "#25273c",
+            transition: "background 0.3s ease",
+          }}
         />
       </div>
     </div>

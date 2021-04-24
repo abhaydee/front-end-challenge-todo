@@ -3,16 +3,18 @@
   margin-inline: 2rem;
   margin-top: 1rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  background-color: white;
+  background: white;
   border-radius: 0.25rem;
   display: flex;
   justify-content: space-between;
   font-family: "Roboto Slab", serif;
   &__light {
-    background-color: white;
+    background: white;
+    transition: background 0.3s ease;
   }
   &__dark {
-    background-color: #25273c;
+    background: #25273c;
+    transition: background 0.3s ease;
   }
 }
 .tabs-container > button {
@@ -36,10 +38,12 @@
   display: flex;
   justify-content: center;
   &__light {
-    background-color: white;
+    background: white;
+    transition: background 0.3s ease;
   }
   &__dark {
-    background-color: #25273c;
+    background: #25273c;
+    transition: background 0.3s ease;
   }
 }
 .priority-container > button {

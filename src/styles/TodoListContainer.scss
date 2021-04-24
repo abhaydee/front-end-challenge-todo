@@ -19,11 +19,13 @@
     }
   }
   &__light {
-    background-color: white;
+    background: white;
+    transition: background 0.3s ease;
     color: rgb(23, 23, 35);
   }
   &__dark {
-    background-color: #25273c;
+    background: #25273c;
+    transition: background 0.3s ease;
     color: white;
   }
 

@@ -13,12 +13,14 @@
     border-radius: 00.25rem;
     font-size: 1rem;
     &__light {
-      background-color: white;
+      background: white;
+      transition: background 0.3s ease;
       color: black;
     }
     &__dark {
       background: #25273c;
       color: white;
+      transition: background 0.3s ease;
     }
   }
   &__image {
@@ -26,12 +28,14 @@
     height: 1.875rem;
   }
   &__light {
-    background-color: white;
+    background: white;
     color: black;
+    transition: background 0.3s ease;
   }
   &__dark {
     background: #25273c;
     color: white;
+    transition: background 0.3s ease;
   }
 }
 .main-container {

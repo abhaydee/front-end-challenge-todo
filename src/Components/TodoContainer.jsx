@@ -11,7 +11,7 @@ function TodoContainer() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch({ type: "THEME", payload: theme });
-  }, [theme,dispatch]);
+  }, [theme, dispatch]);
   const handleTheme = () => {
     setTheme(!theme);
   };
@@ -23,11 +23,19 @@ function TodoContainer() {
         }`}
       >
         <div className={"todo-container__theme"}>
-          <h1 className={"todo-container__heading animate__animated animate__bounceInDown"}>T O D O</h1>
+          <h1
+            className={
+              "todo-container__heading animate__animated animate__bounceInDown"
+            }
+          >
+            T O D O
+          </h1>
           <img
             alt="theme-icon"
             src={theme === false ? IconSun : IconMoon}
-            className={"todo-container__themeicon animate__animated animate__bounceInDown"}
+            className={
+              "todo-container__themeicon animate__animated animate__bounceInDown"
+            }
             onClick={handleTheme}
           />
         </div>
@@ -38,7 +46,10 @@ function TodoContainer() {
         </div>
         <div
           className="todobottom-container"
-          style={{ backgroundColor: theme === true ? "" : "#161621" }}
+          style={{
+            background: theme === true ? "" : "#161621",
+            transition: "background 0.3s ease",
+          }}
         ></div>
       </div>
     </>
